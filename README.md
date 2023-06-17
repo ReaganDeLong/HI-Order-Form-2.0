@@ -2,7 +2,7 @@
 
 Per the recommendations of experienced developers, I tried to create something that solved a real-world problem of my own.
 
-For my Home Inspection business, I have a third party call center that takes my calls to set up inspections for me. 95% of the time the information is complete and accurate, but the other 5% of the time:
+For my Home Inspection business, I have a third-party call center that takes my calls to set up inspections for me. 95% of the time the information is complete and accurate, but the other 5% of the time:
 
 1. Information gets left blank
 2. Information is inaccurate
@@ -10,7 +10,7 @@ For my Home Inspection business, I have a third party call center that takes my 
 
 So I created this order generator to help solve some of those issues. 
 
-To combat point 1 & 2:
+To combat points 1 & 2:
 
 -I created fields that are mandatory before moving on to the next section. Some fields are intentionally left non-required.
 
@@ -26,7 +26,7 @@ Other Features / Notes:
 
 -I created a button that generates a printable form of the completed information. It's not pretty, but it gets the job done.
 
--There were other features I intended to add but it got to a point where the solutions were too complex (for me) and I didn't understand my own code, so I left those things out. Examples: Only having the current step highlighted, adding regex, adding dark mode
+-There were other features I intended to add but it got to a point where the solutions were too complex (for me) and I didn't understand my own code, so I left those things out. Examples: Only having the current step highlighted, adding regex, adding light/dark mode
 
 -The "nextFunction" was originally very long and repetitive. I asked chatGPT if there was a way to make it simpler and, of course, there was. It gave me the idea to use an array instead. I'm sure that there are other ways my code in general could be simplified but this was my first time working with an array and it kicked my butt. I understand the concept, but haven't practiced much with it yet. 
 
