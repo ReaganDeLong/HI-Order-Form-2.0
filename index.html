@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Inspection Quote Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row box">
+        <div class="col-md-8">
+          <div class="form-container">
+
+            <div class="text-center">
+              <h1>Home Inspection Quote / Order Generator</h1>
+            </div>
+
+            <form action="" onsubmit="return false" autocomplete="off" id="data-form">
+              <div class="steps">
+                <p class="step">Client Info</p>
+                <p class="step">Order Info</p>
+                <p class="step">Agent Info</p>
+                <p class="step">Property Info</p>
+                <p class="step">Pricing</p>
+              </div>
+
+              <div class="form-item">
+                <label class="form-label">Client #1 Name</label>
+                <input type="text"  id="client1-name"class="form-control required" placeholder="First & Last">
+                <label class="form-label">Email</label>
+                <input type="email" id="client1-email" class="form-control required" placeholder="Email address">
+                <label class="form-label">Phone Number</label>
+                <input type="text" id="client1-number" class="form-control required" placeholder="ex: (123)-456-7890">
+                <label class="form-label">Optional: Client #2 Name</label>
+                <input type="text" id="client2-name" class="form-control" placeholder="">
+                <label class="form-label">Email</label>
+                <input type="email" id="client2-email" class="form-control" placeholder="">
+                <label class="form-label">Phone Number</label>
+                <input type="text" id="client2-number" class="form-control" placeholder="">
+              </div>
+
+              <div class="form-item">
+                <label class="form-label">Order Date</label>
+                <input type="date" id="order-date" class="form-control required">
+                <label class="form-label">Inspection Date</label>
+                <input type="date" id="inspection-date" class="form-control required">
+                <label class="form-label">Inspection Time</label>
+                <input type="time" id="inspection-time" class="form-control required">
+                <label class="form-label">Order Taken By</label>
+                <input type="text" id="order-taken-by" class="form-control required">
+                <label class="form-label">Referral Source</label>
+                <select class="form-control required other" id="referral">
+                  <option value="please-select">Please Select</option>
+                  <option value="prev">Previous Customer</option>
+                  <option value="agent">Agent</option>
+                  <option value="other-prev">Referred by previous customer</option>
+                  <option value="other">Other</option>
+                </select>
+                <input type="text" class="form-control other" id="other-source" placeholder="Describe Other Source">
+                <label class="form-label">Who will be at the inspection</label>
+                <input type="text" id="attendance" class="form-control required">
+                <label class="form-label">Inspection Authorized By</label>
+                <select class="form-control required" id="authorized">
+                  <option value="please-select">Please Select</option>
+                  <option value="agent">Agent</option>
+                  <option value="client">Client</option>
+                  <option value="other">Other</option>
+                </select>
+                <input type="text" class="form-control other" id="other-auth" placeholder="Who authorized?"> 
+              </div>
+
+              <div class="form-item">
+                <label class="form-label">Buyer's Agent Name (if client is agent or there is none, please indicate so in the 'Name' field)</label>
+                <input type="text" id="ba-name" class="form-control required" placeholder="First & Last name">
+                <label class="form-label">BA Email</label>
+                <input type="email" id="ba-email" class="form-control">
+                <label class="form-label">BA Phone Number</label>
+                <input type="tel" id="ba-number" class="form-control">
+                <label class="form-label">Listing Agent Name (if none, please indicate so in the 'Name' field)</label>
+                <input type="text" id="la-name" class="form-control required" placeholder="First & Last name">
+                <label class="form-label">LA Email</label>
+                <input type="email" id="la-email" class="form-control">
+                <label class="form-label">LA Phone Number</label>
+                <input type="tel" id="la-number" class="form-control">
+              </div>
+
+              
+              <div class="form-item">
+                <label class="form-label">Property Address</label>
+                <input type="text" class="form-control required" id="address">
+                <label class="form-label">City</label>
+                <input type="text" class="form-control required" id="city">
+                <label class="form-label">Zip Code</label>
+                <input type="number" id="zip" class="form-control required" maxlength="5">
+                <label class="form-label">Neighborhood / Subdivision</label>
+                <input type="text" id="neighborhood" class="form-control">
+                <button class="search" id="search">Google Search Address</button>
+                <label class="form-label">Access</label>
+                <select class="form-control required" id="access">
+                  <option value="please-select">Please Select</option>
+                  <option value="lockbox">CBS/Lockbox</option>
+                  <option value="sa-access">Seller's Agent</option>
+                  <option value="ba-access">Buyer's Agent</option>
+                  <option value="homeowner">Homeowner/Occupant</option>
+                  <option value="other">Other</option>
+                </select>
+                <input type="text" class="form-control other" id="other-access" placeholder="Describe Other Access">
+                <input type="text" class="form-control other" id="lockbox" placeholder="Please enter CBS/Lockbox Code">
+                <label class="form-label">Year Built</label>
+                <input type="number" id="age" class="form-control required" maxlength="4">
+                <label class="form-label">Square Footage (include unfinished)</label>
+                <input type="text" class="form-control required" id="footage">
+                <label class="form-label"># of Bedrooms</label>
+                <select class="form-control required" id="bedrooms">
+                  <option value="please-select">Please Select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10+</option>
+                </select>
+                <label class="form-label"># of Bathrooms</label>
+                <select class="form-control required" id="bathrooms">
+                  <option value="please-select">Please Select</option>
+                  <option value="0">0</option>
+                  <option value=".5">.5</option>
+                  <option value="1">1</option>
+                  <option value="1.5">1.5</option>
+                  <option value="2">2</option>
+                  <option value="2.5">2.5</option>
+                  <option value="3">3</option>
+                  <option value="3.5">3.5</option>
+                  <option value="4">4</option>
+                  <option value="4.5">4.5</option>
+                  <option value="5">5</option>
+                  <option value="5.5">5.5</option>
+                  <option value="6">6</option>
+                  <option value="6.5">6.5</option>
+                  <option value="7">7</option>
+                  <option value="7.5">7.5</option>
+                  <option value="8">8</option>
+                  <option value="8.5">8.5</option>
+                  <option value="9">9</option>
+                  <option value="9.5">9.5</option>
+                  <option value="10">10</option>
+                </select>
+                <label class="form-label"># of HVAC Systems</label>
+                <select class="form-control required" id="hvac">
+                  <option value="please-select">Please Select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <label class="form-label"># of Kitchens</label>
+                <select class="form-control required" id="kitchens">
+                  <option value="please-select">Please Select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <label class="form-label">Sale Price</label>
+                <input type="text" class="form-control required" id="sales-price">
+                <label class="form-label">Crawlspace?</label>
+                <select class="form-control required" id="crawl">
+                  <option value="please-select">Please Select</option>
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+                <label class="form-label">Radon Test?</label>
+                <select class="form-control required" id="radon">
+                  <option value="please-select">Please Select</option>
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+                <label class="form-label">Additional areas? Shed, workshop, barn, detached unit, etc.</label>
+                <input type="text" class="form-control other" id="other-area">
+                <input type="number" class="form-control" id="other-area-fee" placeholder="Additional Fee">
+              </div>
+
+              <div class="form-item">
+                <div class="inspection-fee">
+                  <h3>Inspection Fee: <span id="inspection-fee"></span></h3>
+                </div>
+                <div class="crawl-fee">
+                  <h3>Crawlspace Fee: <span id="crawl-fee"></span></h3>
+                </div>
+                <div class="radon-fee">
+                  <h3>Radon Fee: <span id="radon-fee"></span></h3>
+                </div>
+                <div class="additional-area-fee">
+                  <h3>Additional Area Fee: <span id="additional-area-fee"></span></h3>
+                </div>
+                <div class="total-fee">
+                  <h1>Total Fee: <span id="total-fee"></span></h3>
+                </div>
+                <button class="generate" id="generate">Generate Printable Copy</button>
+                <button class="override" id="override-button">Manual Fee Override</button>
+                <input type="number" id="override-price" placeholder="Override price (TOTAL price)">
+                <input type="text" id="override" placeholder="Reason for override">
+              </div>
+
+              <span class="error">Please fill in the highlighted fields</span>
+              <button class="btn btn-lg">Previous</button>
+              <button class="btn btn-lg">Next</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script src="script2.js" defer></script>
+  </body>
+</html>
+
