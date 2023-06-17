@@ -1,4 +1,4 @@
-# HI-Order-Quote-Generator
+# Second version of a form used to generate quotes and an order sheet.
 
 Per the recommendations of experienced developers, I tried to create something that solved a real-world problem of my own.
 
