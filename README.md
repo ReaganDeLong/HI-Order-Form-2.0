@@ -1,5 +1,3 @@
-# Second version of a form used to generate quotes and an order sheet.
-
 Per the recommendations of experienced developers, I tried to create something that solved a real-world problem of my own.
 
 For my Home Inspection business, I have a third-party call center that takes my calls to set up inspections for me. 95% of the time the information is complete and accurate, but the other 5% of the time:
